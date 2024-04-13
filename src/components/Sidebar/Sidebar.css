@@ -1,0 +1,35 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    color: #0366d6;
+    ;
+    padding: 10px;
+    transition: 0.3s ease;
+    border: 1px solid #e1e0e0;
+}
+
+.sidebar-node {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #e1e0e0;
+    cursor: grab;
+    border-radius: 8px;
+}
+
+.node-icon {
+    display: block;
+    margin: 20px;
+    color: #65d071;
+}

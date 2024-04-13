@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Dashboard from './Dashboard.jsx'
+import Flowchart from './components/Flowchart/Flowchart'
 import { ReactFlowProvider } from "reactflow";
+import './index.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ReactFlowProvider>
-      <Dashboard />
+      <Flowchart />
     </ReactFlowProvider>
   </React.StrictMode>,
 )

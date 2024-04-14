@@ -7,9 +7,11 @@ import MessageIcon from '@mui/icons-material/Message';
 import Typography from '@mui/material/Typography';
 import { Handle, Position } from 'reactflow'
 
-const Node = ({ data }) => {
+import './Node.css'
+
+const Node = ({ data, selected }) => {
   return (
-    <div>
+    <div className={`${selected ? 'seleted' : ''}`}>
       <Card sx={{ width: '250px' }}>
         <CardHeader
 
@@ -28,8 +30,9 @@ const Node = ({ data }) => {
           </Typography>
         </CardContent>
       </Card>
-      <Handle type="source" position={Position.Right} id="source" />
+      
       <Handle type="target" position={Position.Left} id="target" />
+      <Handle type="source" position={Position.Right} id="source" />
     </div>
   )
 }

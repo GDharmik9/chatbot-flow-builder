@@ -1,0 +1,18 @@
+/* custom error message for clicking saveChanges button without selected node */
+.redMessage {
+    color: black;
+    background: lightcoral;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.greenMessage {
+    color: black;
+    background: lightgreen;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}

@@ -9,22 +9,31 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 
 import './Sidebar.css'
 
-const Sidebar = ({ seleted, setSeleted}) => {
+const Sidebar = ({
+    nodeName,
+    setNodeName,
+    selectedNode,
+    setSelectedElements,
+}) => {
 
     const onDragStart = (event, nodeType) => {
         event.dataTransfer.setData("application/reactflow", nodeType);
         event.dataTransfer.effectAllowed = "move";
     };
 
+    const handleInputChange = (event) => {
+        setNodeName(event.target.value);
+    };
+
     return (
         <aside className='sidebar-container'>
-            {seleted ?
+            {selectedNode ?
                 <Card sx={{ width: '100%', marginTop: '20px', boxShadow: 'inherit', borderBottom: '0.5px solid grey', borderRadius: 'none', padding: '0' }}>
                     <CardHeader
 
                         sx={{ borderTop: '0.5px solid grey', borderBottom: '0.5px solid grey', color: 'black', height: '20px' }}
                         avatar={
-                            <IconButton onClick={()=> setSeleted(false)}> <KeyboardBackspaceIcon /></IconButton>
+                            <IconButton onClick={() => setSelectedElements([])}> <KeyboardBackspaceIcon /></IconButton>
                         }
                         title="Message"
                     />
@@ -35,7 +44,8 @@ const Sidebar = ({ seleted, setSeleted}) => {
                             label="Text"
                             multiline
                             rows={3}
-                            value={''}
+                            value={nodeName}
+                            onChange={handleInputChange}
                         />
                     </CardContent>
                 </Card> :
